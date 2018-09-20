@@ -2,19 +2,13 @@
 
 <!-- List heroes with *ngFor -->
 <ul class="heroes">
-  <li *ngFor="let hero of heroes">
+  <li *ngFor="let hero of heroes" 
+  (click)="onSelect(hero)" 
+  [class.selected]="hero === selectedHero">
     <span class="badge">{{hero.id}}</span> {{hero.name}}
   </li>
 </ul>
 
-<!-- HeroesComponent's template -->
-<h2> {{hero.name}} Details </h2>
-<div> <span>id: </span>{{hero.id}} </div>
-<div> <span>name: </span>{{hero.name}} </div>
-
-<!-- Edit the hero -->
-<div>
-  <label>name:
-    <input [(ngModel)]="hero.name" placeholder="name">
-  </label>
-</div>
+<!-- Bind the HeroesComponent.selectedHero to the element's heroDetail property like this. -->
+<!-- [heroDetail]="selectedHero" is an Angular property binding. -->
+<app-hero-detail [heroDetail]="selectedHero"></app-hero-detail>

@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { HeroesComponent } from './heroes/heroes.component';
 
 // import the FormsModule symbol from the @angular/forms library
-import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
+import { FormsModule } from '@angular/forms';
+import { HeroDetailComponent } from './hero-detail/hero-detail.component'; // <-- NgModel lives here
 
 @NgModule({
   // The HeroesComponent is declared in the @NgModule.declarations array.
   declarations: [
     AppComponent,
-    HeroesComponent
+    HeroesComponent,
+    HeroDetailComponent
   ],
   // Then add FormsModule to the @NgModule metadata's imports array, 
   // which contains a list of external modules that the app needs.
