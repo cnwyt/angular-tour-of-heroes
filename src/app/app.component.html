@@ -5,8 +5,15 @@
   </h2>
 </div>
 <hr>
+<nav>
+    <a routerLink="/dashboard">Dashboard</a>
+    <a routerLink="/heroes">Heroes</a>
+</nav>
 
 <!-- Show the HeroesComponent view -->
 <!-- Remember that app-heroes is the element selector for the HeroesComponent. -->
-<app-heroes></app-heroes>
+<!-- <app-heroes></app-heroes> -->
 
+<router-outlet></router-outlet>
+
+<app-messages></app-messages>

@@ -1,14 +1,30 @@
 <h2>My Heroes</h2>
 
 <!-- List heroes with *ngFor -->
-<ul class="heroes">
-  <li *ngFor="let hero of heroes" 
-  (click)="onSelect(hero)" 
-  [class.selected]="hero === selectedHero">
+<!-- <ul class="heroes">
+  <li *ngFor="let hero of heroes" (click)="onSelect(hero)" [class.selected]="hero === selectedHero">
     <span class="badge">{{hero.id}}</span> {{hero.name}}
+  </li>
+</ul> -->
+<div>
+  <label>Hero name:
+    <input #heroName />
+  </label>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="add(heroName.value); heroName.value=''">
+    add
+  </button>
+</div>
+
+<ul class="heroes">
+  <li *ngFor="let hero of heroes">
+    <a routerLink="/detail/{{hero.id}}">
+      <span class="badge">{{hero.id}}</span> {{hero.name}}
+    </a>
+    <button class="delete" title="delete hero" (click)="delete(hero)"> x </button>
   </li>
 </ul>
 
 <!-- Bind the HeroesComponent.selectedHero to the element's heroDetail property like this. -->
 <!-- [heroDetail]="selectedHero" is an Angular property binding. -->
-<app-hero-detail [heroDetail]="selectedHero"></app-hero-detail>
+<!-- <app-hero-detail [heroDetail]="selectedHero"></app-hero-detail> -->
