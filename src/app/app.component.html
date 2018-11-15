@@ -6,9 +6,13 @@
 </div>
 <hr>
 <nav>
-    <a routerLink="/dashboard">Dashboard</a>
-    <a routerLink="/heroes">Heroes</a>
-</nav>
+<div class="pure-menu pure-menu-horizontal">
+  <a routerLink="/" class="pure-menu-heading pure-menu-link">Home</a>
+  <ul class="pure-menu-list">
+      <li class="pure-menu-item"><a routerLink="/dashboard" class="pure-menu-link">Dashboard</a></li>
+      <li class="pure-menu-item"><a routerLink="/heroes" class="pure-menu-link">Heroes</a></li>
+  </ul>
+</div>
 
 <!-- Show the HeroesComponent view -->
 <!-- Remember that app-heroes is the element selector for the HeroesComponent. -->

@@ -14,7 +14,41 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 ng generate module app-routing --flat --module=app
 
+npm install spectre.css --save
 
+### 修改 angular 配置文件
+
+打开项目根目录 `angular.json` 配置文件:  
+
+`architect > outputPath > options`: 
+
+`outputPath`: 项目输出目录  
+`assets`: 项目资源目录，存放项目资源文件，比如ico,images等  
+`styles`: 项目样式文件.  
+`scripts`: 项目js文件目录.   
+
+```json
+"architect": {
+  "build": {
+    "builder": "@angular-devkit/build-angular:browser",
+    "options": {
+        "outputPath": "dist/angular-tour-of-heroes",
+        "index": "src/index.html",
+        "main": "src/main.ts",
+        "polyfills": "src/polyfills.ts",
+        "tsConfig": "src/tsconfig.app.json",
+        "assets": [
+            "src/favicon.ico",
+            "src/assets"
+        ],
+        "styles": [
+            "node_modules/purecss/build/pure-min.css",
+            "src/styles.css"
+        ],
+        "scripts": []
+    },
+  }
+```
 
 ## Build
 
