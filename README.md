@@ -52,7 +52,14 @@ npm install spectre.css --save
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+使用`ng build` 命令可以构建项目
+
+修改 `angular.json` 配置文件：
+输出路径 `outputPath` 的值由 `dist/angular-tour-of-heroes` 修改为 `docs`。
+
+```
+$ ng build --prod --build-optimizer --base-href=/angular-tour-of-heroes/
+```
 
 ## Running unit tests
 
