@@ -50,7 +50,7 @@ npm install spectre.css --save
   }
 ```
 
-## Build
+## 构建代码并部署到 Github Pages
 
 使用`ng build` 命令可以构建项目
 
@@ -60,6 +60,8 @@ npm install spectre.css --save
 ```
 $ ng build --prod --build-optimizer --base-href=/angular-tour-of-heroes/
 ```
+
+在 Github > Settings 中，`` > 选择 "master branch /docs folder"， 并保存。
 
 ## Running unit tests
 
