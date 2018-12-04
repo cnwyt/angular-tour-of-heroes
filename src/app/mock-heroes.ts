@@ -5,7 +5,7 @@
 // Define a HEROES constant as an array of ten heroes and export it. 
 // The file should look like this.
 
-import { Hero } from './hero';
+import { Hero } from './models/hero';
 
 export const HEROES: Hero[] = [
   { id: 11, name: 'Mr. Nice' },
