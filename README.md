@@ -84,5 +84,7 @@ ng generate component pages/hero-search
 
 ng generate service services/hero
 ng generate service services/message
+ng generate service services/InMemoryData
 
 ng generate class models/hero
+

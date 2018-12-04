@@ -12,8 +12,10 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './/app-routing.module';
 import { HttpClientModule }    from '@angular/common/http';
 
+// Simulate a data server
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService }  from './in-memory-data.service';
+import { InMemoryDataService }  from './services/in-memory-data.service';
+
 import { HeroDetailComponent } from './pages/hero-detail/hero-detail.component';
 import { HeroSearchComponent } from './pages/hero-search/hero-search.component';
 import { MessagesComponent } from './pages/messages/messages.component';
