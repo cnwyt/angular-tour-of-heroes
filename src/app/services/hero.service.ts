@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 
 // Import the Hero and HEROES.
-import { Hero } from './hero';
-import { HEROES } from './mock-heroes';
+import { Hero } from '../models/hero';
+// import { HEROES } from '../mock-heroes';
 
 // Open the HeroService file and import the Observable and of symbols from RxJS.
 import { Observable, of } from 'rxjs';

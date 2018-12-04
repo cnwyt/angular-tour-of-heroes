@@ -74,3 +74,15 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 [Angular CLI](https://github.com/angular/angular-cli) 
+
+
+ng generate component pages/dashboard 
+ng generate component pages/heroes
+ng generate component pages/hero-detail
+ng generate component pages/hero-search
+
+
+ng generate service services/hero
+ng generate service services/message
+
+ng generate class models/hero

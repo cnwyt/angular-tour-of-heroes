@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 // import the Hero class
-import { Hero } from '../hero';
+import { Hero } from '../../models/hero';
 
 // Open the HeroesComponent class file and import the mock HEROES.
 // import { HEROES } from '../mock-heroes';
-import { HeroService } from '../hero.service';
+import { HeroService } from '../../services/hero.service';
 
 @Component({
   selector: 'app-heroes',
