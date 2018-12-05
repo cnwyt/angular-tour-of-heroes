@@ -79,9 +79,9 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 ## 参考链接
 
-[Angular英文站](https://angular.io/) 
+[Angular英文站](https://angular.io/)  
 [Angular中文站](https://angular.cn/)  
-[Angular CLI](https://github.com/angular/angular-cli)   
+[Angular CLI](https://github.com/angular/angular-cli)  
 
 
 
