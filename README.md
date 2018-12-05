@@ -1,15 +1,21 @@
 # AngularTourOfHeroes
 
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.5.
+```
+Angular CLI: 7.1.1
+Node: 10.11.0
+OS: darwin x64
+Angular: 7.1.1
+```
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. 
+The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Run `ng generate component component-name` to generate a new component. 
+You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 
 ng generate module app-routing --flat --module=app
@@ -71,9 +77,12 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
+## 参考链接
 
-[Angular CLI](https://github.com/angular/angular-cli) 
+[Angular英文站](https://angular.io/)  
+[Angular中文站](https://angular.cn/)  
+[Angular CLI](https://github.com/angular/angular-cli)  
+
 
 
 ng generate component pages/dashboard 
