@@ -88,3 +88,17 @@ ng generate service services/InMemoryData
 
 ng generate class models/hero
 
+ng generate component pages/errors/PageNotFound
+
+npm i faker
+
+HTTP拦截器：
+
+ng generate class http-interceptors/index
+ng generate class http-interceptors/noop-interceptor
+ng generate class http-interceptors/auth-interceptor  
+ng generate class http-interceptors/logging-interceptor
+
+
+ng generate class http-interceptors/caching-interceptor
+ng generate service services/request-cache 

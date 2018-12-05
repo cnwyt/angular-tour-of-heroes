@@ -20,6 +20,10 @@ import { HeroDetailComponent } from './pages/hero-detail/hero-detail.component';
 import { HeroSearchComponent } from './pages/hero-search/hero-search.component';
 import { MessagesComponent } from './pages/messages/messages.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { environment } from '../environments/environment';
+import { PageNotFoundComponent } from './pages/errors/page-not-found/page-not-found.component';
+import { RequestCache, RequestCacheWithMap } from './services/request-cache.service';
+import { httpInterceptorProviders } from './http-interceptors';
 
 @NgModule({
   // The HeroesComponent is declared in the @NgModule.declarations array.
@@ -29,23 +33,32 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
     HeroDetailComponent,
     DashboardComponent,
     HeroSearchComponent,
-    MessagesComponent
+    MessagesComponent,
+    PageNotFoundComponent
   ],
   // Then add FormsModule to the @NgModule metadata's imports array, 
   // which contains a list of external modules that the app needs.
   imports: [
+    AppRoutingModule,
     BrowserModule,
     FormsModule,
-    AppRoutingModule,
     HttpClientModule,
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
     // Remove it when a real server is ready to receive requests.
-    HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, { dataEncapsulation: false }
-    )
+    environment.production ? [] : HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService, { 
+        dataEncapsulation: false,
+        delay: 500 
+      })
+    // HttpClientInMemoryWebApiModule.forRoot(
+    //   InMemoryDataService, { dataEncapsulation: false }
+    // )
   ],
-  providers: [],
+  providers: [
+    { provide: RequestCache, useClass: RequestCacheWithMap },
+    httpInterceptorProviders
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
