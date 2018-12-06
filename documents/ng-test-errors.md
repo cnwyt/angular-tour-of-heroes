@@ -162,7 +162,7 @@ Failed: Cannot read property 'textContent' of null
 解决办法: 修改相应模板或测试用例，使其符合预期。
 
 
-更多内存，请查看项目代码：
+更多内容，请查看项目代码：
 
 https://github.com/cnwyt/angular-tour-of-heroes
 

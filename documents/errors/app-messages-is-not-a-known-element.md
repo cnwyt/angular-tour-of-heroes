@@ -10,22 +10,9 @@ Angular CLI: 7.1.1
 Node: 10.11.0
 OS: darwin x64
 Angular: 7.1.1
-...（略）...
 ```
 
-### 问题分析：
-
-使用 `ng serve` 运行应用，通过访问 `http://localhost:4200`，都运行正常，未见报错。但是，执行 `ng test` 就提示一大推错误，这是为什么呢？
-
-提示这个“不是已知元素”，一般是没有引入组件，可是在代码里已经都引入过了，为何还会这样报错呢?
-
-最后发现，在应用代码里需要引入外，在测试代码(`*.spec.ts`)里也要再次引入相应的组件或模块。
-
-具体错误提示与解决办法如下。
-
-### 错误提示1: 'app-messages' is not a known element
-
-错误详情:
+### 错误详情:
 
 ```js
 Chrome 72.0.3622 (Mac OS X 10.13.6) AppComponent should create the app FAILED
@@ -36,11 +23,22 @@ Chrome 72.0.3622 (Mac OS X 10.13.6) AppComponent should create the app FAILED
 	[ERROR ->]<app-messages></app-messages>"): ng:///DynamicTestModule/AppComponent.html@22:0
 ```
 
-错误原因: 没有引入提示的组件。比如本错误提示中，在AppComponent组件中，使用了app-messages 组件，但是并没有引入 app-messages 组件
+### 问题分析：
 
-解决办法: 引入相应的组件，比如 app-messages 组件
+使用 `ng serve` 运行应用，通过访问 `http://localhost:4200`，都运行正常，未见报错。但是，执行 `ng test` 就提示一大推错误，这是为什么呢？
 
-类似`XXX is not a known element`的错误还有很多，引入相应的组件即可:
+提示这个“不是已知元素”，一般是没有引入组件，可是在代码里已经都引入过了，为何还会这样报错呢?
+
+最后发现，在应用代码里需要引入外，在测试代码(`*.spec.ts`)里也要再次引入相应的组件或模块。
+
+比如上边例子中，在`AppComponent`组件中，使用了 `app-messages` 组件模板，但是并没有引入 app-messages 组件（MessagesComponent）。
+
+
+### 解决办法: 
+
+引入相应的组件。
+
+类似`XXX is not a known element`的错误还有很多，引入相应的组件即可。
 
 比如，在 DashboardComponent 组件中，使用了 `app-hero-search` 组件模板，却没有引入 `HeroSearchComponent` 组件: 
 
@@ -54,9 +52,12 @@ Chrome 72.0.3622 (Mac OS X 10.13.6) DashboardComponent should create FAILED
 	"): ng:///DynamicTestModule/DashboardComponent.html@12:0
 ```
 
-修改后`dashboard.component.spec.ts`的`beforeEach`部分代码如下:
+### 修复后代码:
+
+修改后 `dashboard.component.spec.ts` 的 `beforeEach` 部分代码如下:
 
 ```js
+// dashboard.component.spec.ts 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ 
@@ -73,7 +74,7 @@ Chrome 72.0.3622 (Mac OS X 10.13.6) DashboardComponent should create FAILED
   }));
 ```
  
-更多内存，请查看项目代码：
+更多内容，请查看项目代码：
 
 https://github.com/cnwyt/angular-tour-of-heroes
 

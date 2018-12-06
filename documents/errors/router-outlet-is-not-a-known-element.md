@@ -104,7 +104,7 @@ describe('AppComponent', () => {
 });
 ```
 
-更多内存，请查看项目代码：
+更多内容，请查看项目代码：
 
 https://github.com/cnwyt/angular-tour-of-heroes
 

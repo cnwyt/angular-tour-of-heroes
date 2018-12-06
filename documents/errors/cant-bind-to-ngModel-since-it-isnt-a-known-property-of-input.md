@@ -3,7 +3,7 @@ cant-bind-to-ngModel-since-it-isnt-a-known-property-of-input.md
 
 Angular执行测试报错: Can't bind to 'ngModel' since it isn't a known property of 'input'
 
-本机环境：
+### 本机环境：
 
 ```
 $ ng --version
@@ -30,6 +30,8 @@ rxjs                              6.3.3
 typescript                        3.1.6
 webpack                           4.19.1
 ```
+
+### 报错详情：
 
 执行 `ng test` 报错，错误内容如下：
 
@@ -66,6 +68,8 @@ export class AppModule { }
 
 在 `app.module.ts` 中已经都引入了表单模块  `FormsModule`，所以访问应用都正常。但是测试执行测试用例时，没有找到表单模块。
 
+### 解决办法：
+
 解决办法，在测试用例文件`hero-detail.component.spec.ts`的`beforeEach`部分，引入表单模块 `FormsModule` :
 
 ```
@@ -81,9 +85,9 @@ export class AppModule { }
   }));
 ```
 
-完整代码如下：
+### 完整代码如下：
 
-```
+```js
 // hero-detail.component.spec.ts`
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
@@ -120,7 +124,7 @@ describe('HeroeDetailComponent', () => {
 });
 ```
 
-更多内存，请查看项目代码：
+更多内容，请查看项目代码：
 
 https://github.com/cnwyt/angular-tour-of-heroes
 
