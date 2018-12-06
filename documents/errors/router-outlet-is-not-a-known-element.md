@@ -1,6 +1,6 @@
 router-outlet-is-not-a-known-element.md
 
-Angular执行测试报错: Can't bind to 'ngModel' since it isn't a known property of 'input'
+Angular执行测试报错: 'router-outlet' is not a known element
 
 ### 本机环境：
 
@@ -32,9 +32,9 @@ webpack                           4.19.1
 
 ### 报错内容
 
-使用 `ng serve` 运行应用，通过访问 `http://localhost:4200`,都一切正常。 
+使用 `ng serve` 运行应用，通过访问 `http://localhost:4200`，运行正常，未见报错。 
 
-执行 `ng test` 报错，错误内容如下：
+但是，执行 `ng test` 测试就报错，错误内容如下：
 
 ```
 Chrome 72.0.3622 (Mac OS X 10.13.6) AppComponent should create the app FAILED
@@ -46,7 +46,7 @@ Chrome 72.0.3622 (Mac OS X 10.13.6) AppComponent should create the app FAILED
     ...
 ```
 
-执行测试用例创建 AppComponent 失败。
+错误提示，执行测试用例创建 AppComponent 失败，应该是测试代码里没有引入路由模块。
 
 ### 解决办法
 
@@ -67,23 +67,8 @@ beforeEach(() => {
 })
 ```
 
-在测试用例文件`app.component.spec.ts`的`beforeEach`部分引入模块 `RouterTestingModule` :
-
-```js
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [
-        AppComponent, MessagesComponent, HeroSearchComponent
-      ],
-      imports: [ 
-        // fix errors:  'router-outlet' is not a known element
-        RouterTestingModule,
-        HttpClientTestingModule, 
-      ] 
-    }).compileComponents();
-  }));
-```
-
+在测试用例文件`app.component.spec.ts`的`beforeEach`部分引入模块 `RouterTestingModule`。
+ 
 ### 完整代码
 
 文件 `app.component.spec.ts` 完整代码如下：
@@ -117,10 +102,9 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   }));
 });
-
 ```
 
-### 查看项目代码：
+更多内存，请查看项目代码：
 
 https://github.com/cnwyt/angular-tour-of-heroes
 
