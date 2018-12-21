@@ -2,7 +2,7 @@ import { InMemoryDbService } from 'angular-in-memory-web-api';
 import { Hero } from '../models/hero';
 import { Injectable } from '@angular/core';
 
-// declare const require: any;
+declare const require: any;
 const faker = require('faker');
 
 @Injectable({

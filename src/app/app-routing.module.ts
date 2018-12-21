@@ -9,6 +9,11 @@ import { PageNotFoundComponent } from './pages/errors/page-not-found/page-not-fo
 
 const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
+  {
+    path: 'crisis-center',
+    loadChildren: './pages/crisis-center/crisis-center.module#CrisisCenterModule',
+    canLoad: []
+  },
   { path: 'heroes', component: HeroesComponent },
   { path: 'detail/:id', component: HeroDetailComponent },
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },

@@ -24,6 +24,9 @@ import { environment } from '../environments/environment';
 import { PageNotFoundComponent } from './pages/errors/page-not-found/page-not-found.component';
 import { RequestCache, RequestCacheWithMap } from './services/request-cache.service';
 import { httpInterceptorProviders } from './http-interceptors';
+import { CrisisCenterComponent } from './pages/crisis-center/crisis-center/crisis-center.component';
+import { CrisisCenterHomeComponent } from './pages/crisis-center/crisis-center-home/crisis-center-home.component';
+import { CrisisCenterModule } from './pages/crisis-center/crisis-center.module';
 
 @NgModule({
   // The HeroesComponent is declared in the @NgModule.declarations array.
@@ -34,15 +37,17 @@ import { httpInterceptorProviders } from './http-interceptors';
     DashboardComponent,
     HeroSearchComponent,
     MessagesComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    CrisisCenterComponent,
+    CrisisCenterHomeComponent
   ],
   // Then add FormsModule to the @NgModule metadata's imports array, 
   // which contains a list of external modules that the app needs.
   imports: [
-    AppRoutingModule,
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    CrisisCenterModule,
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
     // Remove it when a real server is ready to receive requests.
@@ -50,10 +55,11 @@ import { httpInterceptorProviders } from './http-interceptors';
       InMemoryDataService, { 
         dataEncapsulation: false,
         delay: 500 
-      })
+      }),
     // HttpClientInMemoryWebApiModule.forRoot(
     //   InMemoryDataService, { dataEncapsulation: false }
     // )
+    AppRoutingModule,
   ],
   providers: [
     { provide: RequestCache, useClass: RequestCacheWithMap },
