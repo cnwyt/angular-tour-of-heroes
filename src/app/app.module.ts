@@ -27,6 +27,7 @@ import { httpInterceptorProviders } from './http-interceptors';
 import { CrisisCenterComponent } from './pages/crisis-center/crisis-center/crisis-center.component';
 import { CrisisCenterHomeComponent } from './pages/crisis-center/crisis-center-home/crisis-center-home.component';
 import { CrisisCenterModule } from './pages/crisis-center/crisis-center.module';
+import { HomeComponent } from './pages/home/home.component';
 
 @NgModule({
   // The HeroesComponent is declared in the @NgModule.declarations array.
@@ -39,7 +40,8 @@ import { CrisisCenterModule } from './pages/crisis-center/crisis-center.module';
     MessagesComponent,
     PageNotFoundComponent,
     CrisisCenterComponent,
-    CrisisCenterHomeComponent
+    CrisisCenterHomeComponent,
+    HomeComponent
   ],
   // Then add FormsModule to the @NgModule metadata's imports array, 
   // which contains a list of external modules that the app needs.

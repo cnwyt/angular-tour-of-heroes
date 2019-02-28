@@ -2,11 +2,12 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CrisisListComponent } from './crisis-list/crisis-list.component';
 import { PageNotFoundComponent } from '../errors/page-not-found/page-not-found.component';
+import { CrisisCenterComponent } from './crisis-center/crisis-center.component';
 
 const routes: Routes = [
   {
-    path: '',
-    component: CrisisListComponent,
+    path: 'crisis-center',
+    component: CrisisCenterComponent,
     canActivate: [],
     children: [
       {
@@ -14,7 +15,7 @@ const routes: Routes = [
         canActivateChild: [],
         children: [
           { path: 'crisis-center', component: CrisisListComponent },
-          { path: '', component: CrisisListComponent },
+          { path: '', component: PageNotFoundComponent },
           { path: '**', component: PageNotFoundComponent }
         ]
       }
