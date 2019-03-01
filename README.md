@@ -9,7 +9,8 @@ Angular: 7.1.1
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. 
+Run `ng serve` for a dev server. 
+Navigate to `http://localhost:4200/`. 
 The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
@@ -67,7 +68,7 @@ npm install spectre.css --save
 $ ng build --prod --build-optimizer --base-href=/angular-tour-of-heroes/
 ```
 
-在 Github > Settings 中，`` > 选择 "master branch /docs folder"， 并保存。
+在 Github > Settings 中， 选择 "master branch /docs folder"， 并保存。
 
 ## Running unit tests
 
